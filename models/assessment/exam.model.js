@@ -1,7 +1,7 @@
 const Joi = require("joi");
-const { mongoose, Schema } = require("mongoose");
+const mongoose = require("mongoose");
 
-const examSchema = new Schema(
+const examSchema = new mongoose.Schema(
   {
     course_code: {
       type: String,

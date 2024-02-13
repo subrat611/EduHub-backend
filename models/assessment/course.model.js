@@ -1,10 +1,10 @@
 const Joi = require("joi");
-const { mongoose, Schema } = require("mongoose");
+const mongoose = require("mongoose");
 
-const courseSchema = new Schema(
+const courseSchema = new mongoose.Schema(
   {
     course_creator: {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
