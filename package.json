@@ -1,0 +1,36 @@
+{
+  "name": "eduhub-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "backend service for EduHub LMS portal",
+  "main": "index.js",
+  "author": "Subrat Kumar Jena <subratj611@gmail.com> (https://github.com/subrat611)",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app",
+    "test": "jest"
+  },
+  "keywords": [
+    "opju",
+    "exam",
+    "portal",
+    "backend",
+    "service"
+  ],
+  "devDependencies": {
+    "jest": "29.7.0",
+    "nodemon": "3.0.2"
+  },
+  "dependencies": {
+    "bcrypt": "5.1.1",
+    "cookie-parser": "1.4.6",
+    "cors": "2.8.5",
+    "date-fns": "3.3.1",
+    "dotenv": "16.3.1",
+    "express": "4.18.2",
+    "joi": "17.11.1",
+    "jsonwebtoken": "9.0.2",
+    "mongoose": "8.0.4"
+  }
+}
