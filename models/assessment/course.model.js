@@ -6,7 +6,6 @@ const courseSchema = new mongoose.Schema(
     course_creator: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
     },
     title: {
       type: String,
@@ -20,18 +19,23 @@ const courseSchema = new mongoose.Schema(
     },
     category: {
       type: String,
+      required: true,
     },
     image: {
       type: String,
+      default: null,
     },
     total_videos: {
       type: Number,
+      default: 0,
     },
     total_enrolled: {
       type: Number,
+      default: 0,
     },
     difficulty: {
       type: String,
+      required: true,
     },
   },
   { timestamps: true }
