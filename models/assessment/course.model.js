@@ -36,7 +36,14 @@ const courseSchema = new Schema({
 const Course = mongoose.model("course", courseSchema);
 
 const validateCourseReqBody = (reqBody) => {
-  const schema = Joi.object({});
+  const schema = Joi.object({
+    title: Joi.string().required(),
+    subtitle: Joi.string(),
+    description: Joi.string(),
+    category: Joi.string().required(),
+    image: Joi.string(),
+    difficulty: Joi.string().required(),
+  });
 
   return schema.validate(reqBody);
 };
