@@ -1,41 +1,46 @@
 const Joi = require("joi");
 const { mongoose, Schema } = require("mongoose");
 
-const examSchema = new Schema({
-  course_code: {
-    type: String,
-    require: true,
-    unique: true,
+const examSchema = new Schema(
+  {
+    course_code: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    course: {
+      type: String,
+      required: true,
+    },
+    semester: {
+      type: Number,
+      required: true,
+    },
+    subject: {
+      type: String,
+      required: true,
+    },
+    max_marks: {
+      type: Number,
+      required: true,
+    },
+    exam_rules: {
+      type: String,
+      required: true,
+    },
+    start_date: {
+      type: Date,
+      required: true,
+    },
+    end_date: {
+      type: Date,
+      required: true,
+    },
   },
-  course: {
-    type: String,
-    require: true,
-  },
-  semester: {
-    type: Number,
-    require: true,
-  },
-  subject: {
-    type: String,
-    require: true,
-  },
-  max_marks: {
-    type: Number,
-    require: true,
-  },
-  exam_rules: {
-    type: String,
-    require: true,
-  },
-  start_date: {
-    type: Date,
-    require: true,
-  },
-  end_date: {
-    type: Date,
-    require: true,
-  },
-});
+  {
+    timestamps: true,
+  }
+);
 
 const examModel = mongoose.model("Exam", examSchema);
 
