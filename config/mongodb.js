@@ -22,7 +22,7 @@ class Server {
       const connectionInstance = await mongoose.connect(
         process.env.ENVIRONMENT === "dev"
           ? `${process.env.MONGODB_URI}/${process.env.DB_NAME}`
-          : `${process.env.MONGODB_URI}/${process.env.DB_NAME}`
+          : `${process.env.MONGODB_URI}`
       );
       console.log(`DB CONNECTED, HOST: ${connectionInstance.connection.host}`);
     } catch (err) {
