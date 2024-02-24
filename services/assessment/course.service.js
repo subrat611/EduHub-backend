@@ -15,8 +15,22 @@ async function createNewCourse(data) {
       httpStatusCodes.SERVER_ERROR
     );
   }
+
+ 
+}
+async function getAllCourses(){
+  try{
+    const Courses= await courseRepository.getAll();
+    return Courses;
+  }catch(error){
+    throw new AppError(
+      "An error occurred when trying to retrieve all courses.",
+      httpStatusCodes.SERVER_ERROR
+    );
+  }
 }
 
 module.exports = {
   createNewCourse,
+  getAllCourses,
 };

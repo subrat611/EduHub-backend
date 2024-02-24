@@ -1,7 +1,7 @@
 const {
   validateCourseReqBody,
 } = require("../../models/assessment/course.model");
-const { createNewCourse } = require("../../services/assessment/course.service");
+const { createNewCourse,getAllCourses } = require("../../services/assessment/course.service");
 
 const ApiError = require("../../utils/common/error-response");
 const httpStatusCodes = require("../../utils/common/status-codes");
@@ -31,7 +31,21 @@ class CourseController {
       return res.status(error.statusCode).json(ApiError);
     }
   }
+  async getAllCourses(req,res){
+    try{
+      const response =  await getAllCourses();
+      
+      ApiSuccess.message = "course retrived successfully";
+      ApiSuccess.data = response;
+      return res.status(httpStatusCodes.OK).json(ApiSuccess);
+    }catch(error){
+      ApiError.error = error;
+      ApiError.message = error.explanation;
+      return res.status(error.statusCode).json(ApiError);
+    }
 }
+}
+
 
 const course = new CourseController();
 
