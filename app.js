@@ -10,4 +10,7 @@ server.app.use("/api/v1/exam", examRouter);
 const courseRouter = require("./routes/assessment/course.route");
 server.app.use(`${fixedEndPoint}/course`, courseRouter);
 
+const sectionRouter = require("./routes/assessment/section.route");
+server.app.use(`${fixedEndPoint}/section`, sectionRouter);
+
 server.listenToServer();
