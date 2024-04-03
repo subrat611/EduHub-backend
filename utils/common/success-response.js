@@ -1,7 +1,7 @@
 const ApiSuccess = {
   success: true,
   message: {},
-  data: [],
+  data: {},
 };
 
 module.exports = ApiSuccess;
