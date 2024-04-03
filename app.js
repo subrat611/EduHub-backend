@@ -4,7 +4,7 @@ const fixedEndPoint = "/api/v1";
 
 const server = require("./config/mongodb");
 
-server.app.use("/api/v1/running", () => {
+server.app.use("/api/v1/running", (req, res) => {
   return res.status(200).json("Server Running");
 });
 
